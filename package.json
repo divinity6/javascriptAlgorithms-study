@@ -1,0 +1,25 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "javascriptAlgorithms",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divinity6/javascriptAlgorithms.git"
+  },
+  "keywords": [
+    "javascriptAlgorithms"
+  ],
+  "author": "hoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divinity6/javascriptAlgorithms/issues"
+  },
+  "homepage": "https://github.com/divinity6/javascriptAlgorithms#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
