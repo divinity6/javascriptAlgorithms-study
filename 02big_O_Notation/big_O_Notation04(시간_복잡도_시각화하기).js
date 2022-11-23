@@ -5,7 +5,6 @@
  *
  *           ===== Big O Notation =====
  *
- *    -
  */
 title( 'addUpToFirst , addUpTwo ' );
 {
@@ -19,7 +18,7 @@ title( 'addUpToFirst , addUpTwo ' );
     return total;
   }
 
-  const addUpTwo = ( n ) => {
+  const addUpToSecond = ( n ) => {
     return n * ( n + 1 ) / 2;
   }
 
