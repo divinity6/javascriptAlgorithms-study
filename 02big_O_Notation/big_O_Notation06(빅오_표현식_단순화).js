@@ -49,7 +49,7 @@
  *    -----> for 문이라고 전부 O(n)는 아니다
  *
  */
-title( 'for 문인데 O(n)예시' );
+title( 'for 문인데 O(1)예시' );
 {
     function logAtMost5( n ){
         for ( var i = 1; i <= Math.min( 5 , n ); i++ ){
