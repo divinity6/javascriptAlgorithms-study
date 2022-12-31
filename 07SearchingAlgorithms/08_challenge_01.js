@@ -3,6 +3,8 @@ console.log( '=========================== binarySearch =========================
 /**
  * - binarySearch
  *
+ * - 이진 검색으로 배열에서 해당 숫자의 index 를 반환
+ *
  * - 아 헷갈렷네...
  *
  * --> 그니깐, middle 은 계산되는 값으로 놔두고 ,
@@ -102,7 +104,8 @@ console.log( '=========================== naiveStringSearch ====================
  *
  * --> 해당 문자열이 나오는 횟수를 반환하는 함수 작성
  */
-function naiveStringSearch( longStr , targetStr ){
+/** mySolution */
+function naiveSearch( longStr , targetStr ){
 
     let count = 0;
 
@@ -129,16 +132,33 @@ function naiveStringSearch( longStr , targetStr ){
             if ( j === ( targetStr.length - 1 ) ){
                 count += 1;
             }
-
         }
-
     }
-
     return count;
 
 }
 
-console.log(naiveStringSearch("wowomgzomg", "omg")); // 2
-console.log(naiveStringSearch("harold said haha in hamburg", "ha")); // 4
-console.log(naiveStringSearch("harold said haha in hamburg", "sad")); // 0
+/**
+ * - 내가 생각한 정답이랑 똑같네...ㅋㅋ
+ */
+/** goodSolution */
+function naiveSearch( long , short ){
+    var count = 0;
+    for ( var i = 0; i < long.length; i++ ){
+        for ( var j = 0; j < short.length; j++ ){
+            if ( short[ j ] !== long[ i + j ] ){
+                break;
+            }
+            if ( j === short.length - 1 ){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+console.log(naiveSearch("wowomgzomg", "omg")); // 2
+console.log(naiveSearch("lorie loled", "lol")); // 1
+console.log(naiveSearch("harold said haha in hamburg", "ha")); // 4
+console.log(naiveSearch("harold said haha in hamburg", "sad")); // 0
 
