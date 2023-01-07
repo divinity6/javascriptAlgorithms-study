@@ -11,6 +11,8 @@ console.log( '=========================== insertionSorting =====================
  *
  * --> 질문의 의도를 잘못이해함...ㅋㅋ
  *
+ * ----> 그리고, 이렇게 정렬하게되면 무적권 시간복잡도는 O(n2) 가 될 수 밖에 없지...
+ *
  */
 /** mySolution */
 function insertionSorting( arr ){
