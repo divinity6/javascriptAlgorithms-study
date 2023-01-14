@@ -82,3 +82,33 @@ console.log(pivot([7 , 3 , 21 , 10 , 5 , 2 , 12 , 17 ])); // 3
 console.log(pivot([4 , 7 ,  1 , 25 , 28 , 7 , 2 ])); // 2
 console.log(pivot([50 , 50 , 4 , 250 , 27 , 19 , 4 , 2 , 1])); // 6
 console.log(pivot([10 , 24 , 76 , 73 , 72 , 1 , 9 ])); // 2
+
+console.log( '=========================== quickSort =============================' );
+
+/**
+ *  - quickSort 구현
+ *
+ */
+/** mySolution */
+function quickSort( arr ){
+    /** 1 개 이하일 경우에는 더이상 재귀를 돌지 않음 */
+    if ( 1 >= arr.length ){
+        return arr;
+    }
+
+    const sliceIndex = pivot( arr , 0 );
+    /** + 1 을 해줘야 하는 이유는 +1 을 안해주면 기준 값변경이 일어나지 않기 때문임 */
+    const left = quickSort( arr.slice( 0 , sliceIndex + 1 ) );
+    const right = quickSort( arr.slice( sliceIndex + 1 ) );
+
+    return left.concat( right );
+}
+
+/** goodSolution */
+
+console.log(quickSort( [ 4 , 8 , 2 , 1 , 5 , 7 , 6 , 3 ] )) //[ 1 , 2 , 3, 4 , 5 ,6 ,7 , 8 ]
+console.log(quickSort([7 , 3 , 21 , 10 , 5 , 2 , 12 , 17 ])); // [ 2 , 3 ,5 , 7 , 10 , 12 , 17 , 21 ]
+console.log(quickSort([4 , 7 ,  1 , 25 , 28 , 7 , 2 ])); // [ 1, 2, 4, 7 , 7 , 25 , 28 ]
+console.log(quickSort([50 , 50 , 4 , 250 , 27 , 19 , 4 , 2 , 1])); // [ 1, 2, 4 , 4, 19 ,27 , 50 , 50 , 250 ]
+console.log(quickSort([10 , 24 , 76 , 73 , 72 , 1 , 9 ])); // [ 1, 9 , 10 , 24 , 72 , 73 , 76 ]
+
