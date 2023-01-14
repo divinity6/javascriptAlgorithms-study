@@ -104,7 +104,30 @@ function quickSort( arr ){
     return left.concat( right );
 }
 
+/**
+ * - 아 , slice 처럼 새로운 배열을 아예 만들지 않고 기존 배열의 위치를 변경하며 구현했네...ㅋㅋ
+ */
 /** goodSolution */
+function quickSort( arr , left = 0 , right = arr.length - 1){
+    /**
+     * - 제자리에서 정렬하고 있기 때문에 arr.length 로 비교하는 것은 의미 없다
+     *
+     * --> 바뀌는 것은 left 와 right 값이기 때문에 이 값으로 비교해야 한다
+     *
+     * --> left 의 index 와 right 의 index 는 진행할수록 가까워지기때문에,
+     *     left 보다 right 가 클 경우에만 진행하면 된다
+     */
+    if ( left < right ){
+        let pivotIndex = pivot( arr , left , right );
+        /** left : -1 을 하는 이유는 이전에 정렬된 pivotIndex 는 굳이 진행하지 않아도 되기 때문이다 */
+        quickSort( arr , left , pivotIndex - 1 );
+        /** right : +1 을 하는 이유는 이전에 정렬된 pivotIndex 는 굳이 진행하지 않아도 되기 때문이다 */
+        quickSort( arr , pivotIndex + 1 , right );
+    }
+
+    return arr;
+
+}
 
 console.log(quickSort( [ 4 , 8 , 2 , 1 , 5 , 7 , 6 , 3 ] )) //[ 1 , 2 , 3, 4 , 5 ,6 ,7 , 8 ]
 console.log(quickSort([7 , 3 , 21 , 10 , 5 , 2 , 12 , 17 ])); // [ 2 , 3 ,5 , 7 , 10 , 12 , 17 , 21 ]
