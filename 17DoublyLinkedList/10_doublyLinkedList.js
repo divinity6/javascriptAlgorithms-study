@@ -232,4 +232,53 @@ class DoublyLinkedList {
         return removedNode;
 
     }
+
+    /**
+     * - 반대로 뒤집는 로직의 핵심은
+     *
+     * - 현재 head 를 tail 로 설정하는 것임
+     *
+     * @important 여기서 nextLoopedNode ,
+     *     prevLoopedNode 는 node.prev , node.next 가 아닌 다음에 반복할 Node 임
+     *
+     * 1. headNode 를 tail 로 설정하고,
+     *
+     * 2. 기존 headNode 부터 리스트 끝까지 반복하면서,
+     *    다음에 currentNode 가 될 Node 를 nextLoopedNode 에 설정한다
+     *
+     * 3. currentNode.next 는 prevLoopedNode( 이전의 currentNode )가 된다
+     *
+     * 4. currentNode.prev 는 nextLoopedNode( 다음의 currentNode )가 된다
+     *
+     * 5. prevLoopedNode( 이전의 currentNode )는 현재 currentNode 가 되고,
+     *
+     * 6. 루프가 끝나기전에 현재 currentNode 는 다음의 nextLoopedNode 로 업데이트한다
+     *
+     */
+    reverse(){
+        if ( 0 === this.length ){
+            return this;
+        }
+
+        let currentNode = this.head;
+
+        this.head = this.tail;
+        this.tail = currentNode;
+
+        let prevLoopedNode = null;
+        let nextLoopedNode;
+
+        for ( let i = 0; i < this.length; i += 1 ){
+            nextLoopedNode = currentNode.next;
+
+            currentNode.next = prevLoopedNode;
+            currentNode.prev = nextLoopedNode;
+
+            prevLoopedNode = currentNode;
+            currentNode = nextLoopedNode;
+        }
+
+        return this;
+
+    }
 }
