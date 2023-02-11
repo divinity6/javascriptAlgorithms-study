@@ -152,6 +152,7 @@ class DoublyLinkedList {
      * - 이것도 내 답변이랑 똑같네
      */
     /** goodSolution */
+    /** 첫 번째 el 삽입 */
     unshift( val ){
 
         var newNode = new Node( val );
