@@ -84,7 +84,7 @@ class MaxBinaryHeap {
      *      해당 값의 변경을 외부로 빼는게 더 좋을 듯?
      */
     /** goodSolution */
-    /** 새로운 Node 삽입 */
+    /** 새로운 Node 삽입 - 이거 내가짠 코드가 더 좋음 */
     insert( element ){
         this.values.push( element );
         this.bubbleUp();
