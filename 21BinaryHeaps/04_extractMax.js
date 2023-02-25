@@ -125,8 +125,11 @@ class MaxBinaryHeap {
              * - 만약 오른쪽 index 에 값이 없거나,
              *   leftChild 의 값이 더 크다면 leftChildIndex 를 반환한다
              */
-            if ( rightChildIndex >= this.values.length || leftChild > element ){
+            if ( rightChildIndex >= this.values.length && leftChild > element ){
                 return leftChildIndex;
+            }
+            else if ( rightChildIndex >= this.values.length ){
+                return -1;
             }
             /**
              * - 만약, leftChild 값과 rightChild 값이 해당 element 보다 크다면
@@ -140,6 +143,9 @@ class MaxBinaryHeap {
              */
             else if ( rightChild > element ){
                 return rightChildIndex;
+            }
+            else if ( leftChild > element ){
+                return leftChildIndex;
             }
 
             return -1;
