@@ -48,3 +48,9 @@ class Graph {
         }
     }
 }
+
+const graph = new Graph();
+
+graph.addVertex( "Tokyo" );
+
+console.log( graph );
