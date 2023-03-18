@@ -8,6 +8,10 @@ console.log( '=========================== Fib Recursion ========================
  *
  * --> 보통 전부이런식으로 구현하지 않나...?
  *
+ * --> 내가 했던게 memoized 패턴으로 구현한거였네 ㅋㅋ
+ *
+ * --> 아래 정답보다 훨씬 빠르고 좋음
+ *
  * @param { number } n - 찾으려는 수
  * @param { number[] } fib - fibonacci 배열
  *
@@ -23,12 +27,12 @@ function fibonacci( n , fib = [ 1 , 1 ] ){
     return fibonacci( n , fib );
 }
 
-console.log( "mySolution" , fibonacci( 4 ) );
+console.log( "mySolution" , fibonacci( 45 ) );
 
 /**
  * - 개간단하네 ㅋㅋㅋ
  *
- * --> 리얼 분할정복이네 ㅋㅋㅋ
+ * --> Not good!!
  */
 /** goodSolution */
 function fib( n ){
@@ -37,4 +41,4 @@ function fib( n ){
     }
     return fib( n - 1 ) + fib( n - 2 );
 }
-console.log( "goodSolution" , fib( 4 ) );
+console.log( "goodSolution" , fib( 45 ) );
