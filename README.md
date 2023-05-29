@@ -5,7 +5,7 @@
 
 - 정렬, 탐색 , 데이터 구조 등을 javascript 로 직접 구현해보고 느낀점들을 정리한 문서입니다
 
-- 각 섹션별로 필요한 알고리즘 및 공부내용을 정리해두었습니다
+- 섹션별로 디렉터리 구조를 나누어 두었습니다
 
 ### [빅오표기법]( https://github.com/divinity6/javascriptAlgorithms-study/blob/master/02big_O_Notation/big_O_Notation01(%EB%B9%85%EC%98%A4_%EC%86%8C%EA%B0%9C).js )
 - 빅오 표기법 소개 및 작성법
