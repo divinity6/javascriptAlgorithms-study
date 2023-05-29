@@ -7,7 +7,7 @@
 
 - 각 섹션별로 필요한 알고리즘 및 공부내용을 정리해두었습니다
 
-### [빅오표기법]( https://github.com/divinity6/javascriptAlgorithms-study/tree/master/02big_O_Notation )
+### [빅오표기법]( https://github.com/divinity6/javascriptAlgorithms-study/blob/master/02big_O_Notation/big_O_Notation01(%EB%B9%85%EC%98%A4_%EC%86%8C%EA%B0%9C).js )
 - 빅오 표기법 소개 및 작성법
 
 ### [객체_배열 시간복잡도]( https://github.com/divinity6/javascriptAlgorithms-study/tree/master/03ArrayAndObjectPerformanceEval )
